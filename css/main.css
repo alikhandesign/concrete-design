@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Master Layout Styles
+   ========================================================================== */
+
+  html {
+    --font-primary: "HelveticaNeue-Light", helvetica, arial, sans-serif;
+    --font-headers: "HelveticaNeue-Bold", helvetica, arial, sans-serif;
+  }
+	body {
+		margin: 0 auto;
+	}
+
+	main {
+		padding: 2rem;
+    width: 980px;
+    margin: 0 auto;
+
+	}
+
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+  html {
+    --color-text: #545454;
+    --color-textLight: #ffffff;
+    --color-primary: #eb8b47;
+    --color-accent1: #ffd574;
+    --color-accent2: #fafafa;   
+  }
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+  html {
+	  color: var(--color-text);
+	  font-family: var(--font-primary);
+  }
+
+  a {
+   	color: var(--color-primary);
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  ul a {
+    text-decoration: none;
+  }
+
+  ul a:hover {
+    font-weight: 700;
+  }
+  .light-italic {
+    font-style: italic;
+  }
+
+  .bold {
+    font-family: var(--font-headers);
+    font-weight: 700;
+  }
+
+  .bold-italic {
+    font-family: var(--font-headers);
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .heading1 {
+    font-size: 2em;
+  }
+
+  .heading2 {
+    font-size: 1.5em;
+  }
+
+  .heading3 {
+    font-size: 1.17em;
+  }
+
+  .heading 4 {
+    font-size: 1em;
+  }
+/* ==========================================================================
+   Header Component
+   ========================================================================== */
+
+  header {
+	  background-color: var(--color-primary);
+	  color: var(--color-white);
+	  padding: 2rem;
+  }
+
+  .site-header a {
+    color: var(--color-textLight);
+    text-decoration: none;
+  }
+
+  .site-header ul {
+    display: inline;
+    list-style-type: none;
+  }
+
+  .logo {
+    color: var(--color-textLight);
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+ /* ==========================================================================
+   Footer Component
+   ========================================================================== */
+
+  footer {
+	   background-color: var(--color-primary);
+	   color: var(--color-white);
+	   padding: 2rem;
+   }
+
+  footer p {
+    color: var(--color-textLight);
+  }
+  
+  .social-links a {
+    color: var(--color-textLight);
+    text-decoration: none;
+  }
+  
+  .social-links ul {
+    display: inline;
+    list-style-type: none;
+  }
