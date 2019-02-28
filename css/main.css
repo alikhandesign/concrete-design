@@ -5,14 +5,23 @@
   html {
     --font-primary: "HelveticaNeue-Light", helvetica, arial, sans-serif;
     --font-headers: "HelveticaNeue-Bold", helvetica, arial, sans-serif;
+
+
+    --ratio: 1.250;
+    --size-xxxxlarge: calc( var(--size-xxxlarge) * var(--ratio) );
+    --size-xxxlarge: calc( var(--size-xlarge) * var(--ratio) * var(--ratio) );
+    --size-xlarge: calc( var(--size-large) * var(--ratio) );
+    --size-large: calc( 1rem * var(--ratio) );
+    --size-small: calc( 1rem * ( var(--ratio) / 2) );
   }
+
 	body {
 		margin: 0 auto;
 	}
 
 	main {
 		padding: 2rem;
-    width: 980px;
+    max-width: 40rem;
     margin: 0 auto;
 
 	}
@@ -39,75 +48,164 @@
 	  color: var(--color-text);
 	  font-family: var(--font-primary);
   }
+  
+  h1 {
+    font-size: var(--size-xxxlarge);
+  }
+
+  h2 {
+    font-size: var(--size-xlarge);
+  }
+
+  h3 {
+    font-size: var(--size-large);
+  }
+  
+  h4 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  p {
+    line-height: 1.25rem;
+  }
 
   a {
    	color: var(--color-primary);
+  }
+
+  a:hover {
+    /* Need to define these styles */
+  }
+
+  a:active {
+    /* Need to define these styles */
   }
   
   ul {
     list-style-type: none;
   }
+
   ul a {
     text-decoration: none;
   }
 
   ul a:hover {
-    font-weight: 700;
+    text-decoration: underline;
+  }
+  ul li {
+    list-style-position: outside;
+    margin-left: -1rem;
+  }
+
+  ul li:before {
+    content: "– ";
+    color: var(--color-primary);
+  }
+
+  text {
+    color: var(--color-text);
+  }
+  h1 {
+    color: var(--color-primary);
+  }
+  .light {
+    margin-left: 1rem;
   }
   .light-italic {
     font-style: italic;
+    margin-left: 1rem;
   }
 
   .bold {
     font-family: var(--font-headers);
     font-weight: 700;
+    margin-left: 1rem;
   }
 
   .bold-italic {
     font-family: var(--font-headers);
     font-weight: 700;
     font-style: italic;
+    margin-left: 1rem;
+  }
+  
+  .tertiary {
+    font-size: var(--size-small);
   }
 
-  .heading1 {
-    font-size: 2em;
+  figure {
+    border: 1px solid var(--color-text);
+    padding: 1rem;
   }
 
-  .heading2 {
-    font-size: 1.5em;
+  blockquote {
+    font-family: var(--font-primary);
+    font-style: italic;
+    position: relative;
   }
 
-  .heading3 {
-    font-size: 1.17em;
+  blockquote:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -55px;
+    top: -20px;
+    color: var(--color-primary);
   }
 
-  .heading 4 {
-    font-size: 1em;
+  cite {
+    color: var(--color-primary);
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+    margin-right: 50px;
   }
+
+  cite:before {
+  content: "\2014 \2009";
+}
+
 /* ==========================================================================
    Header Component
    ========================================================================== */
 
   header {
 	  background-color: var(--color-primary);
-	  color: var(--color-white);
+	  color: var(--color-textLight);
 	  padding: 2rem;
   }
 
   .site-header a {
     color: var(--color-textLight);
+    font-weight: bold;
     text-decoration: none;
+    padding-bottom: .5rem;
   }
 
   .site-header ul {
-    display: inline;
     list-style-type: none;
+    padding-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .site-header li {
+    display: inline;
+    margin-right: 2rem;
   }
 
   .logo {
     color: var(--color-textLight);
-    font-size: 3em;
+    font-size: var(--size-xxxxlarge);
     font-weight: bold;
+    background-color: var(--color-textLight);
+    letter-spacing: .1rem;
+    padding: .5rem 1rem;
+    display: inline-block;
+    -webkit-text-stroke: .85px var(--color-primary);
   }
 
  /* ==========================================================================
@@ -118,10 +216,15 @@
 	   background-color: var(--color-primary);
 	   color: var(--color-white);
 	   padding: 2rem;
+     text-align: center;
    }
-
+  footer a {
+    color: var(--color-textLight);
+  }
   footer p {
     color: var(--color-textLight);
+    max-width: 45rem;
+    margin: 1rem auto;
   }
   
   .social-links a {
@@ -130,6 +233,135 @@
   }
   
   .social-links ul {
-    display: inline;
     list-style-type: none;
   }
+
+  .social-links li {
+    display: inline;
+    margin-right: 2rem;
+  }
+
+ /* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+  .hero-button {
+    font-size: var(--size-xxxlarge);
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-textLight);
+    background-color: var(--color-primary);
+   }
+
+  .hero-button:hover {
+    transition: .5s;
+    color: var(--color-primary);
+    background-color: var(--color-textLight);
+    border: 1px solid var(--color-primary);
+   }
+
+  .hero-button:active {
+    color: var(--color-textLight);
+    background-color: var(--color-accent2);
+   }
+
+  .hero-button:focus {
+    color: var(--color-textDark);
+   }
+
+  .normal-button {
+    font-size: var(--size-large);
+    padding: .5rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-textLight);
+    background-color: var(--color-accent1);
+  }
+
+ .normal-button:hover {
+    transition: .5s;
+    color: var(--color-accent1);
+    background-color: var(--color-textLight);
+    border: 1px solid var(--color-accent1);
+  }
+
+  .normal-button:active {
+    color: var(--color-textLight);
+    background-color: var(--color-accent2);
+   }
+
+  .normal-button:focus {
+    color: var(--color-textDark);
+  }
+
+ .tertiary-button {
+    padding: .25rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+ }
+
+ .tertiary-button:hover {
+    transition: .5s;
+    color: var(--color-textLight);
+    background-color: var(--color-primary);
+ }
+
+.tertiary-button:active {
+    color: var(--color-textLight);
+    background-color: var(--color-accent2);
+    border: none;
+ }
+
+ .tertiary-button:focus {
+    color: var(--color-textDark);
+ }
+
+  /* ==========================================================================
+   Reusable ELements
+   ========================================================================== */
+
+summary {
+  font-size: var(--size-large);
+  font-weight: bold;
+  margin-bottom: .25rem;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after {
+  background: var(--color-primary); 
+  content: "+"; 
+  color: #fff; 
+  float: left; 
+  font-size: var(--size-xxlarge); 
+  font-weight: bold; 
+  margin: 0 10px;
+  padding-bottom: 3px;
+  text-align: center; 
+  width: 25px;
+}
+
+details[open] summary:after {
+  background: var(--color-primary); 
+  content: "-"; 
+  color: #fff; 
+  float: left; 
+  font-size: var(--size-xxlarge); 
+  font-weight: bold; 
+  margin: 0 10px;
+  padding-bottom: 3px;
+  text-align: center; 
+  width: 25px;
+}
+
+.inside-accordian {
+  color: var(--color-textLight);
+  background-color: var(--color-primary);
+  padding: 1rem;
+  margin: .5rem 0;
+}
