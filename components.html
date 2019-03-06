@@ -42,19 +42,28 @@
 
 					<h3>Hero Button</h3>
 
-					<a href="#" class="hero-button">Hero Button</a>
-
-					<h3>Normal Button</h3>
-
-					<a href="#" class="normal-button">Normal Button</a>
-
-					<h3>Tertiary Button</h3>
-
-					<a href="#" class="tertiary-button">Tertiary Button</a>
+					<a class="button hero-button">Hero Button</a>
 
 				</figure>
 
-				<h2>Accordians</h2>
+				<figure>
+
+					<h3>Normal Button</h3>
+
+					<a class="button">Normal Button</a>
+
+				</figure>
+
+				<figure>
+
+					<h3>Tertiary Button</h3>
+
+					<a class="button small-button">Tertiary Button</a>
+
+				</figure>
+
+
+				<h2>Accordions</h2>
 
 				<figure>
 
@@ -62,11 +71,35 @@
 
 						<summary>This is an example accordian.</summary>
 
-						<div class="inside-accordian">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-						<div class="inside-accordian">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-						<div class="inside-accordian">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+						<div>
+
+							<p class="inside-accordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p class="inside-accordion"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="inside-accordion">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+						</div>
 
 					</details>
+
+				</figure>
+
+				<h2>Modal Dialog</h2>
+
+				<figure>
+
+					<button id="open-modal" type="button">Open Modal</button>
+
+						<dialog id="modal-demo" class="modal">
+
+							<h4>Lorem Ipsum</h4>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+							<a class="button">OK</a>
+
+					</dialog>
+
+				</figure>
 
 			</main>
 
@@ -91,6 +124,29 @@
 				<p>Copyright © 2019 Ali Khan Design. All rights reserved.</p>
 
 			</footer>
+		
+		<script>
+
+			document.addEventListener('DOMContentLoaded', function(){
+
+				const modal = document.querySelector('dialog');
+				const open = document.getElementById('open-modal');
+
+				open.addEventListener('click', () => {
+				modal.showModal();
+				});
+
+				modal.addEventListener('click', event => {
+				if (event.target === modal) {
+				modal.close('cancelled');
+				}
+				});
+
+			});
+
+		</script>
+	
+
 
 		</body>
 

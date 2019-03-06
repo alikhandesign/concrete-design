@@ -13,6 +13,7 @@
     --size-xlarge: calc( var(--size-large) * var(--ratio) );
     --size-large: calc( 1rem * var(--ratio) );
     --size-small: calc( 1rem * ( var(--ratio) / 2) );
+    --size-xsmall: calc( 1rem * ( var(--ratio)/ 3) );
   }
 
 	body {
@@ -33,7 +34,8 @@
 
   html {
     --color-text: #545454;
-    --color-textLight: #ffffff;
+    --color-text-light: #ffffff;
+    --color-text-disabled: #989898;
     --color-primary: #eb8b47;
     --color-accent1: #ffd574;
     --color-accent2: #fafafa;   
@@ -50,6 +52,7 @@
   }
   
   h1 {
+    color: var(--color-primary);
     font-size: var(--size-xxxlarge);
   }
 
@@ -66,20 +69,33 @@
     font-weight: bold;
   }
 
+  h5 {
+    font-size: var(--size-small);
+    font-weight: bold;
+  }
+
+  h6 {
+    font-size: var(--size-xsmall);
+    font-weight: bold;
+  }
+
   p {
     line-height: 1.25rem;
   }
 
   a {
    	color: var(--color-primary);
+    text-decoration: none;
   }
 
-  a:hover {
-    /* Need to define these styles */
+  p a:hover {
+    text-decoration: underline;
   }
-
-  a:active {
-    /* Need to define these styles */
+  p a: active {
+    color: var(--color-accent2);
+  }
+  p a:visited {
+    color: var(--color-accent1);
   }
   
   ul {
@@ -93,6 +109,7 @@
   ul a:hover {
     text-decoration: underline;
   }
+
   ul li {
     list-style-position: outside;
     margin-left: -1rem;
@@ -102,12 +119,17 @@
     content: "– ";
     color: var(--color-primary);
   }
+  
+  .sub-ordered-list {
+    list-style-type: lower-roman;
+  }
+/* Ask for help regarding removing before element and using circles instead */
 
   text {
     color: var(--color-text);
   }
-  h1 {
-    color: var(--color-primary);
+  .featured-text {
+    font-style: italic;
   }
   .light {
     margin-left: 1rem;
@@ -130,7 +152,7 @@
     margin-left: 1rem;
   }
   
-  .tertiary {
+  .tertiary-text {
     font-size: var(--size-small);
   }
 
@@ -151,8 +173,8 @@
     content: "\201C";
     font-size: 80px;
     position: absolute;
-    left: -55px;
-    top: -20px;
+    left: -3.5rem;
+    top: -1rem;
     color: var(--color-primary);
   }
 
@@ -174,12 +196,12 @@
 
   header {
 	  background-color: var(--color-primary);
-	  color: var(--color-textLight);
+	  color: var(--color-text-light);
 	  padding: 2rem;
   }
 
   .site-header a {
-    color: var(--color-textLight);
+    color: var(--color-text-light);
     font-weight: bold;
     text-decoration: none;
     padding-bottom: .5rem;
@@ -198,10 +220,10 @@
   }
 
   .logo {
-    color: var(--color-textLight);
+    color: var(--color-text-light);
     font-size: var(--size-xxxxlarge);
     font-weight: bold;
-    background-color: var(--color-textLight);
+    background-color: var(--color-text-light);
     letter-spacing: .1rem;
     padding: .5rem 1rem;
     display: inline-block;
@@ -219,16 +241,16 @@
      text-align: center;
    }
   footer a {
-    color: var(--color-textLight);
+    color: var(--color-text-light);
   }
   footer p {
-    color: var(--color-textLight);
+    color: var(--color-text-light);
     max-width: 45rem;
     margin: 1rem auto;
   }
   
   .social-links a {
-    color: var(--color-textLight);
+    color: var(--color-text-light);
     text-decoration: none;
   }
   
@@ -244,84 +266,88 @@
  /* ==========================================================================
    Buttons
    ========================================================================== */
+  .button {
+    font-size: var(--size-large);
+    padding: .5rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-text-light);
+    background-color: var(--color-accent1);
+    box-shadow: .5rem .5rem var(--color-text-disabled);
+  }
+
+  .button:hover {
+    transition: .5s;
+    color: var(--color-accent1);
+    background-color: var(--color-text-light);
+    border: 1px solid var(--color-accent1);
+    text-decoration: none;
+    box-shadow: .25rem .25rem var(--color-text-disabled);
+  }
+
+  .button:active {
+    color: var(--color-text-light);
+    background-color: var(--color-accent2);
+    transform: translateX(1rem) translateY(1rem);
+  }
+
+  .button:focus {
+    color: var(--color-textDark);
+  }
 
   .hero-button {
     font-size: var(--size-xxxlarge);
     padding: 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-textLight);
+    color: var(--color-text-light);
     background-color: var(--color-primary);
-   }
+  }
 
   .hero-button:hover {
     transition: .5s;
     color: var(--color-primary);
-    background-color: var(--color-textLight);
+    background-color: var(--color-text-light);
     border: 1px solid var(--color-primary);
-   }
+  }
 
   .hero-button:active {
-    color: var(--color-textLight);
+    color: var(--color-text-light);
     background-color: var(--color-accent2);
-   }
+    transform: translateX(1rem) translateY(1rem);
+  }
 
   .hero-button:focus {
     color: var(--color-textDark);
-   }
-
-  .normal-button {
-    font-size: var(--size-large);
-    padding: .5rem;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-textLight);
-    background-color: var(--color-accent1);
   }
 
- .normal-button:hover {
-    transition: .5s;
-    color: var(--color-accent1);
-    background-color: var(--color-textLight);
-    border: 1px solid var(--color-accent1);
-  }
-
-  .normal-button:active {
-    color: var(--color-textLight);
-    background-color: var(--color-accent2);
-   }
-
-  .normal-button:focus {
-    color: var(--color-textDark);
-  }
-
- .tertiary-button {
+  .small-button {
+    font-size: var(--size-small);
     padding: .25rem;
-    text-decoration: none;
-    font-weight: bold;
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
- }
+    box-shadow: .25rem .25rem var(--color-text-disabled);
+  }
 
- .tertiary-button:hover {
+  .small-button:hover {
     transition: .5s;
-    color: var(--color-textLight);
+    color: var(--color-text-light);
     background-color: var(--color-primary);
- }
+  }
 
-.tertiary-button:active {
-    color: var(--color-textLight);
+  .small-button:active {
+    color: var(--color-text-light);
     background-color: var(--color-accent2);
     border: none;
- }
+    transform: translateX(1rem) translateY(1rem);
+  }
 
- .tertiary-button:focus {
+  .small-button:focus {
     color: var(--color-textDark);
- }
+  }
 
-  /* ==========================================================================
-   Reusable ELements
-   ========================================================================== */
+/* ==========================================================================
+  Reusable ELements
+ ========================================================================== */
 
 summary {
   font-size: var(--size-large);
@@ -359,9 +385,63 @@ details[open] summary:after {
   width: 25px;
 }
 
-.inside-accordian {
-  color: var(--color-textLight);
+.inside-accordion {
+  color: var(--color-text-light);
   background-color: var(--color-primary);
   padding: 1rem;
   margin: .5rem 0;
+}
+
+/* ==========================================================================
+  Examples
+========================================================================== */
+
+.swatch-box {
+  text-align: center;
+}
+
+.color-swatch-white {
+  stroke: #989898;
+}
+
+/* ==========================================================================
+   Modal Dialogs
+========================================================================== */
+
+dialog {
+  background-color: var(--color-primary);
+  border: none;
+  color: var(--color-text-light);
+  box-shadow: .5rem .5rem var(--color-text-disabled);
+  }
+
+dialog::backdrop {
+  background-color: rgba(255, 213, 116, .5);
+}
+
+dialog h4 {
+  margin: 2rem;
+}
+
+dialog p {
+  margin: 2rem;
+}
+
+dialog .button {
+  float: right;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+dialog[open] {
+    -webkit-animation: show 1s ease normal;
+}
+
+@-webkit-keyframes show{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
