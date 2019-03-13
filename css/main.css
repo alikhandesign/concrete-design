@@ -8,6 +8,7 @@
 
 
     --ratio: 1.250;
+    --size-xxxxxlarge: calc( var(--size-xxxxlarge) * var(--ratio));
     --size-xxxxlarge: calc( var(--size-xxxlarge) * var(--ratio) );
     --size-xxxlarge: calc( var(--size-xlarge) * var(--ratio) * var(--ratio) );
     --size-xlarge: calc( var(--size-large) * var(--ratio) );
@@ -50,18 +51,26 @@
 	  color: var(--color-text);
 	  font-family: var(--font-primary);
   }
+
+  svg text {
+    fill: var(--color-text);
+  }
   
   h1 {
     color: var(--color-primary);
-    font-size: var(--size-xxxlarge);
+    font-size: var(--size-xxxxxlarge);
+    line-height: 4rem;
+    margin-top: 4rem  ;
   }
 
   h2 {
-    font-size: var(--size-xlarge);
+    font-size: var(--size-xxxlarge);
+    margin-top: 4rem; 
   }
 
   h3 {
     font-size: var(--size-large);
+    margin-top: 3rem; 
   }
   
   h4 {
@@ -91,7 +100,7 @@
   p a:hover {
     text-decoration: underline;
   }
-  p a: active {
+  p a:active {
     color: var(--color-accent2);
   }
   p a:visited {
@@ -120,10 +129,19 @@
     color: var(--color-primary);
   }
   
-  .sub-ordered-list {
+  ul ul li:before {
+    content: "\2192  ";
+    color: var(--color-primary);
+  }
+
+  ul ul:before {
+  
+  }
+
+  ol ol{
     list-style-type: lower-roman;
   }
-/* Ask for help regarding removing before element and using circles instead */
+  /* Ask for help regarding removing before element and using circles instead */
 
   text {
     color: var(--color-text);
@@ -157,8 +175,9 @@
   }
 
   figure {
-    border: 1px solid var(--color-text);
-    padding: 1rem;
+    background-color: var(--color-accent2);
+    box-shadow: .25rem .25rem var(--color-text-disabled);
+    padding: 1rem 2rem 1rem;
   }
 
   blockquote {
@@ -187,8 +206,8 @@
   }
 
   cite:before {
-  content: "\2014 \2009";
-}
+    content: "\2014 \2009";
+  }
 
 /* ==========================================================================
    Header Component
@@ -239,6 +258,7 @@
 	   color: var(--color-white);
 	   padding: 2rem;
      text-align: center;
+     margin-top: 5rem;
    }
   footer a {
     color: var(--color-text-light);
@@ -268,22 +288,21 @@
    ========================================================================== */
   .button {
     font-size: var(--size-large);
+    display: inline-block;
     padding: .5rem;
-    margin-bottom: 2rem;
     text-decoration: none;
     font-weight: bold;
     color: var(--color-text-light);
     background-color: var(--color-accent1);
-    box-shadow: .5rem .5rem var(--color-text-disabled);
+    box-shadow: .25rem .25rem var(--color-text-disabled);
+    border: none;
+    cursor: pointer;
   }
 
   .button:hover {
     transition: .5s;
     color: var(--color-accent1);
     background-color: var(--color-text-light);
-    border: 1px solid var(--color-accent1);
-    text-decoration: none;
-    box-shadow: .25rem .25rem var(--color-text-disabled);
   }
 
   .button:active {
@@ -307,7 +326,6 @@
     transition: .5s;
     color: var(--color-primary);
     background-color: var(--color-text-light);
-    border: 1px solid var(--color-primary);
   }
 
   .hero-button:active {
@@ -324,13 +342,12 @@
     font-size: var(--size-small);
     padding: .25rem;
     color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    box-shadow: .25rem .25rem var(--color-text-disabled);
   }
 
   .small-button:hover {
     transition: .5s;
-    color: var(--color-text-light);
+    color: var(--color-accent1);
+    border: none;
     background-color: var(--color-primary);
   }
 
@@ -338,7 +355,6 @@
     color: var(--color-text-light);
     background-color: var(--color-accent2);
     border: none;
-    transform: translateX(1rem) translateY(1rem);
   }
 
   .small-button:focus {
@@ -346,8 +362,8 @@
   }
 
 /* ==========================================================================
-  Reusable ELements
- ========================================================================== */
+  Accordian Component
+  ========================================================================== */
 
 summary {
   font-size: var(--size-large);
@@ -375,38 +391,31 @@ summary:after {
 details[open] summary:after {
   background: var(--color-primary); 
   content: "-"; 
-  color: #fff; 
-  float: left; 
-  font-size: var(--size-xxlarge); 
-  font-weight: bold; 
-  margin: 0 10px;
-  padding-bottom: 3px;
-  text-align: center; 
-  width: 25px;
 }
 
 .inside-accordion {
   color: var(--color-text-light);
   background-color: var(--color-primary);
+  box-shadow: .25rem .25rem var(--color-text-disabled);
   padding: 1rem;
   margin: .5rem 0;
 }
 
 /* ==========================================================================
   Examples
-========================================================================== */
+  ========================================================================== */
 
 .swatch-box {
   text-align: center;
 }
 
-.color-swatch-white {
-  stroke: #989898;
+.color-swatch-outline {
+  stroke: var(--color-text-disabled);
 }
 
 /* ==========================================================================
    Modal Dialogs
-========================================================================== */
+  ========================================================================== */
 
 dialog {
   background-color: var(--color-primary);
@@ -434,14 +443,136 @@ dialog .button {
 }
 
 dialog[open] {
-    -webkit-animation: show 1s ease normal;
+    animation: show 1s ease normal;
 }
 
-@-webkit-keyframes show{
+@keyframes show {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
     }
+}
+
+/* ==========================================================================
+   Form Inputs
+  ========================================================================== */
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    display: block;
+    margin: .5rem 0 1.5rem;
+    padding: .5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    background: #eee;
+}
+
+input, textarea {
+    border: none;
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+textarea::placeholder {
+  color: var(--color-light-text);
+  font-weight: lighter;
+}
+
+form p {
+  font-weight: bold;
+  margin: 1rem 0 .5rem;
+}
+
+label[for="last-name"] {
+  margin-top: 1.25rem;
+  display: block;
+}
+
+label[for="email"] {
+  margin-top: 1.5rem;
+  display: block;
+}
+
+label[for="phone-number"] {
+  margin-top: 1.5rem;
+  display: block;
+}
+
+label[for="dropdown"] {
+  margin-top: 1.5rem;
+  margin-bottom: -.5rem;
+  display: block;
+}
+
+label[for="comments"] {
+  margin-top: 1.5rem;
+  display: block;
+}
+
+input:focus,
+textarea:focus {
+  background: var(--color-accent1);
+  color: var(--color-dark-text);
+  box-shadow: .25rem .25rem var(--color-text-disabled);
+}
+
+textarea:disabled {
+  color: var(--color-accent2);
+  background-color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+select {
+  width: 10rem;
+  margin-top: 1rem;
+  padding: .5rem;
+  color: var(--color-text-light);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 0;
+  background-position: top 50% right 5%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAAQITHB4rf5Wjrevt7/leIZE9AAAAM0lEQVQIW2NgAINsAwbWKwzzDzPEfWfQ+mP6vpGBaf29HwIMDFr/G4HSTCuATAYGMIEAAMG5DAL6BIZpAAAAAElFTkSuQmCC);
+}
+
+select:focus {
+  box-shadow: .25rem .25rem var(--color-text-disabled);
+}
+
+input[type="submit"] {
+  display: inline;
+  float: right;
+}
+
+input::placeholder {
+  color: var(--color-light-text);
+  font-weight: lighter;
+}
+
+.form-hint {
+  margin-top: -1.5rem;
+  color: var(--color-primary);
+}
+
+input[type="tel"] {
+  width: 9rem; 
+  padding: .5rem;
+  margin-top: .5rem;
+  display: block;
+}
+
+input.error {
+  background-color: lightcoral; 
+  border-color: crimson;
 }

@@ -38,25 +38,25 @@
 
 				<h2>Button Links</h2>
 
-				<figure>
+				<h3>Hero Button</h3>
 
-					<h3>Hero Button</h3>
+				<figure>
 
 					<a class="button hero-button">Hero Button</a>
 
 				</figure>
 
-				<figure>
+				<h3>Normal Button</h3>
 
-					<h3>Normal Button</h3>
+				<figure>
 
 					<a class="button">Normal Button</a>
 
 				</figure>
 
-				<figure>
+				<h3>Tertiary Button</h3>
 
-					<h3>Tertiary Button</h3>
+				<figure>
 
 					<a class="button small-button">Tertiary Button</a>
 
@@ -81,13 +81,41 @@
 
 					</details>
 
+					<details>
+
+						<summary>This is an example accordian.</summary>
+
+						<div>
+
+							<p class="inside-accordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p class="inside-accordion"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="inside-accordion">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+						</div>
+
+					</details>
+
+					<details>
+
+						<summary>This is an example accordian.</summary>
+
+						<div>
+
+							<p class="inside-accordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p class="inside-accordion"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="inside-accordion">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+						</div>
+
+					</details>
+
 				</figure>
 
 				<h2>Modal Dialog</h2>
 
 				<figure>
 
-					<button id="open-modal" type="button">Open Modal</button>
+					<button id="open-modal" class="button" type="button">Open Modal</button>
 
 						<dialog id="modal-demo" class="modal">
 
@@ -95,9 +123,56 @@
 
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-							<a class="button">OK</a>
+							<button type="button" id="close-modal" class="button">OK</button>
 
 					</dialog>
+
+				</figure>
+
+				<h2>Form Inputs</h2>
+
+				<figure>
+
+					<form>
+							<label for="first-name">First Name</label>
+							<input id="first-name" name="first-name" type="text" placeholder="Enter first name" required>
+							<p class="tertiary-text form-hint">*Required Field</p>
+
+							<label for="last-name">Last Name</label>
+							<input id="last-name" name="last-name" type="text" placeholder="Enter last name" required>
+							<p class="tertiary-text form-hint">*Required Field</p>
+
+							<label for="email">Email</label>
+							<input id="email" name="email" type="text" placeholder="Enter email address" required>
+							<p class="tertiary-text form-hint">*Required Field</p>
+							
+							<label for="phone-number">Phone Number</label>
+							<input id="phone-number" type="tel" name="phone-number" class="error" placeholder="(###) ###-####" required>
+
+							<label for="dropdown">Selection</label>
+							<select id="dropdown" name="dropdown">
+
+								<option selected disabled hidden value="">Select One</option>
+								<option value="">Option 1</option>
+								<option value="">Option 2</option>
+								<option value="">Option 3</option>
+
+							</select>
+
+							<label for="dropdown">Selection 2</label>
+							<select id="dropdown" name="dropdown" class="dropdown">
+
+								<option selected disabled hidden value="">Select One</option>
+								<option value="">Option 1</option>
+								<option value="">Option 2</option>
+								<option value="">Option 3</option>
+
+							</select>
+
+							<label for="comments">Comment Box</label>
+							<textarea id="comments" name="comments" placeholder="Comments have been disabled" disabled></textarea>
+
+							<input class="button" type="submit" value="Submit Form">
 
 				</figure>
 
@@ -131,15 +206,20 @@
 
 				const modal = document.querySelector('dialog');
 				const open = document.getElementById('open-modal');
+				const close = document.getElementById('close-modal');
 
 				open.addEventListener('click', () => {
-				modal.showModal();
+					modal.showModal();
+				});
+
+				close.addEventListener('click', () => {
+					modal.close('cancelled');
 				});
 
 				modal.addEventListener('click', event => {
-				if (event.target === modal) {
-				modal.close('cancelled');
-				}
+					if (event.target === modal) {
+						modal.close('cancelled');
+					}
 				});
 
 			});
