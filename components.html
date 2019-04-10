@@ -15,7 +15,7 @@
 			
 			<header class="site-header">
 
-				<div class="logo">Concrete</div>
+				<div class="logo"><a href="index.html">Concrete</a></div>
 
 				<nav class="site-nav">
 
@@ -23,7 +23,7 @@
 
 						<li><a href="index.html">Home</a></li>
 						<li><a href="style.html">Style</a></li>
-						<li><a href="components.html">Components</a></li>
+						<li><a class="current-page" href="components.html">Components</a></li>
 						<li><a href="layouts.html">Layout</a></li>
 
 					</ul>
@@ -159,20 +159,172 @@
 
 							</select>
 
-							<label for="dropdown">Selection 2</label>
-							<select id="dropdown" name="dropdown" class="dropdown">
-
-								<option selected disabled hidden value="">Select One</option>
-								<option value="">Option 1</option>
-								<option value="">Option 2</option>
-								<option value="">Option 3</option>
-
-							</select>
-
 							<label for="comments">Comment Box</label>
 							<textarea id="comments" name="comments" placeholder="Comments have been disabled" disabled></textarea>
 
 							<input class="button" type="submit" value="Submit Form">
+
+					</form>
+
+				</figure>
+
+				<h2>Navigation</h2>
+
+				<figure>
+
+					<nav class="nav-example">
+
+						<ul class="primary-nav-example">
+
+							<li><a class="current-page" href="#">Item 1</a></li>
+							<li><a href="#">Item 2</a></li>
+							<li class="dropdown-container"><a href="#">Item 3</a>
+							
+								<ol class="dropdown-menu">
+
+							          <li><a href="#">Sub-item 4</a></li>
+							          <li><a href="#">Sub-item 5</a></li>
+							          <li><a href="#">Sub-item 6</a></li>  
+
+							    </ol>
+
+							</li>
+
+						</ul>
+
+					</nav>
+
+					<nav class="nav-example">
+
+  						<ul class="secondary-nav-example">
+
+						    <li><a class="current-page" href="#">Item 1</a></li>
+						    <li><a href="#">Item 2</a></li>
+						    <li class="dropdown-container"><a href="#">Item 3</a>
+
+						        <ol class="dropdown-menu">
+
+						          <li><a href="#">Sub-item 4</a></li>
+						          <li><a href="#">Sub-item 5</a></li>
+						          <li><a href="#">Sub-item 6</a></li>  
+
+						        </ol>
+
+						    </li>
+
+  						</ul>
+
+					</nav>
+
+				</figure>
+
+				<h2>Notifications</h2>
+
+				<figure>
+					
+					<div class="notification-container">
+
+						<div class="notification error"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times-circle" class="svg-inline--fa fa-times-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path></svg><span class="message">Error Message: Lorem Ipsum</span><button type="button" id="close-modal" class="button">OK</button></div>
+
+						<div class="notification warning"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-circle" class="svg-inline--fa fa-exclamation-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"></path></svg><span class="message">Warning Message: Lorem Ipsum</span><button type="button" id="close-modal" class="button">OK</button></div>
+
+						<div class="notification neutral"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" class="svg-inline--fa fa-info-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><span class="message">Neutral Message: Lorem Ipsum</span><button type="button" id="close-modal" class="button">OK</button></div>
+
+						<div class="notification success"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg><span class="message">Success Message: Lorem Ipsum</span><button type="button" id="close-modal" class="button">OK</button></div>
+
+					</div>
+
+				</figure>
+
+				<h2>Hero Block</h2>
+
+				<figure>
+
+					<a href="hero-block.html"><image src="./images/hero-block.png" height="100%" width="100%"></a>
+
+				</figure>
+
+				<h2>Information Cards</h2>
+				
+				<figure>
+
+					<h3>Posts</h3>
+
+					<div class="card">
+
+						<a href="#">
+
+							<div class="post-container">
+	  					
+		  						<h4 class="tag">Blog</h4>
+
+	  						</div>
+
+  						</a>
+
+  						<div class="side-container">
+
+	    					<h4><b>The History of Carpentry</b></h4> 
+	    					<p class="featured-text">by Henry H. Hipster</p>
+	    					<p>The history of carpentry is a tale that can be traced back to the earliest civilizations. Since wood was often a plentiful...</p>
+	    					<a href="#">Read More</a>
+
+  						</div>
+  						
+					</div>
+
+				</figure>
+
+				<figure>
+
+					<h3>Profile</h3>
+
+					<div class="card">
+
+						<a href="#">
+  					
+  						<img src="./images/henry-hipster.png" alt="blog-pic" style="width:100%">
+
+  						</a>
+  					
+  						<div class="side-container">
+
+	    					<h4><b>Henry H. Hipster</b></h4> 
+	    					<p class="featured-text">CEO & Founder</p>
+	    					<p>Henry H. Hipster is a 38-year-old entrepreneur and former board member of Home Depot...</p>
+							<a href="#">Read More</a>
+
+  						</div>
+
+					</div>
+
+				</figure>
+
+				<figure>
+
+					<h3>Call-to-Action</h3>
+
+					<div class="card">
+
+						<a href="#">
+
+							<div class="cta-container">
+	  					
+	  							<h4 class="tag">Sale</h4>
+
+	  						</div>
+
+	  					</a>
+  					
+  						<div class="side-container">
+
+	    					<h4><b>SALE ON ALL WORKBENCHES</b></h4> 
+	    					<p>Get ready for the summer as we reduce all workbenches by 50%...</p>
+							<a href="#">Shop Now</>
+
+  						</div>
+
+					</div>
 
 				</figure>
 

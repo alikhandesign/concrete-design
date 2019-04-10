@@ -2,32 +2,31 @@
    Master Layout Styles
    ========================================================================== */
 
-  html {
-    --font-primary: "HelveticaNeue-Light", helvetica, arial, sans-serif;
-    --font-headers: "HelveticaNeue-Bold", helvetica, arial, sans-serif;
+html {
+  --font-primary: "HelveticaNeue-Light", helvetica, arial, sans-serif;
+  --font-headers: "HelveticaNeue-Bold", helvetica, arial, sans-serif;
 
 
-    --ratio: 1.250;
-    --size-xxxxxlarge: calc( var(--size-xxxxlarge) * var(--ratio));
-    --size-xxxxlarge: calc( var(--size-xxxlarge) * var(--ratio) );
-    --size-xxxlarge: calc( var(--size-xlarge) * var(--ratio) * var(--ratio) );
-    --size-xlarge: calc( var(--size-large) * var(--ratio) );
-    --size-large: calc( 1rem * var(--ratio) );
-    --size-small: calc( 1rem * ( var(--ratio) / 2) );
-    --size-xsmall: calc( 1rem * ( var(--ratio)/ 3) );
-  }
+  --ratio: 1.125; /* Major Second */
+  --size-xxxxxlarge: calc( var(--size-xxxxlarge) * var(--ratio));
+  --size-xxxxlarge: calc( var(--size-xxxlarge) * var(--ratio) );
+  --size-xxxlarge: calc( var(--size-xlarge) * var(--ratio) * var(--ratio) );
+  --size-xlarge: calc( var(--size-large) * var(--ratio) );
+  --size-large: calc( 1rem * var(--ratio) );
+  --size-small: calc( 1rem * ( var(--ratio) / 2) );
+  --size-xsmall: calc( 1rem * ( var(--ratio)/ 3) );
+}
 
-	body {
-		margin: 0 auto;
-	}
+body {
+	margin: 0 auto;
+}
 
-	main {
-		padding: 2rem;
-    max-width: 40rem;
-    margin: 0 auto;
-
-	}
-
+main {
+  text-align: center;
+  padding: 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
 
 /* ==========================================================================
    Colors
@@ -42,110 +41,122 @@
     --color-accent2: #fafafa;   
   }
 
+/* ==========================================================================
+ Help Box
+ ========================================================================== */
 
+.help-box a {
+  display: none;
+}
 /* ==========================================================================
    Typography
    ========================================================================== */
 
-  html {
-	  color: var(--color-text);
-	  font-family: var(--font-primary);
-  }
+html {
+  color: var(--color-text);
+	font-family: var(--font-primary);
+}
 
-  svg text {
-    fill: var(--color-text);
-  }
+svg text {
+  fill: var(--color-text);
+}
   
-  h1 {
-    color: var(--color-primary);
-    font-size: var(--size-xxxxxlarge);
-    line-height: 4rem;
-    margin-top: 4rem  ;
-  }
+h1 {
+  color: var(--color-primary);
+  font-size: var(--size-xxxxxlarge);
+}
 
-  h2 {
-    font-size: var(--size-xxxlarge);
-    margin-top: 4rem; 
-  }
+h2 {
+  font-size: var(--size-xxxlarge);
+  margin-top: 3rem;
+}
 
-  h3 {
-    font-size: var(--size-large);
-    margin-top: 3rem; 
-  }
-  
-  h4 {
-    font-size: 1rem;
-    font-weight: bold;
-  }
+h3 {
+  font-size: var(--size-large);
+  margin-top: 2rem; 
+}
 
-  h5 {
-    font-size: var(--size-small);
-    font-weight: bold;
-  }
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
 
-  h6 {
-    font-size: var(--size-xsmall);
-    font-weight: bold;
-  }
+h5 {
+  font-size: var(--size-small);
+  font-weight: bold;
+}
 
-  p {
-    line-height: 1.25rem;
-  }
+h6 {
+  font-size: var(--size-xsmall);
+  font-weight: bold;
+}
 
-  a {
-   	color: var(--color-primary);
-    text-decoration: none;
-  }
+p {
+  line-height: 1.25rem;
+}
 
-  p a:hover {
-    text-decoration: underline;
-  }
-  p a:active {
-    color: var(--color-accent2);
-  }
-  p a:visited {
-    color: var(--color-accent1);
-  }
-  
-  ul {
-    list-style-type: none;
-  }
+a {
+ 	color: var(--color-primary);
+  text-decoration: none;
+}
 
-  ul a {
-    text-decoration: none;
-  }
+main a:hover {
+  text-decoration: underline;
+}
+p a:active {
+  color: var(--color-accent2);
+}
+p a:visited {
+  color: var(--color-accent1);
+}
 
-  ul a:hover {
-    text-decoration: underline;
-  }
+ul {
+  list-style-type: none;
+}
 
-  ul li {
-    list-style-position: outside;
-    margin-left: -1rem;
-  }
+ul a {
+  text-decoration: none;
+}
 
-  ul li:before {
-    content: "– ";
-    color: var(--color-primary);
-  }
-  
-  ul ul li:before {
-    content: "\2192  ";
-    color: var(--color-primary);
-  }
+main a:hover {
+  text-decoration: underline;
+}
 
-  ul ul:before {
-  
-  }
+ul li {
+  list-style-position: outside;
+}
 
-  ol ol{
+main ul li:before {
+  content: "– ";
+  color: var(--color-primary);
+}
+
+main ul ul li:before {
+  content: "\2192  ";
+  color: var(--color-primary);
+}
+
+main ol ol{
     list-style-type: lower-roman;
-  }
-  /* Ask for help regarding removing before element and using circles instead */
+}
 
-  text {
+text {
     color: var(--color-text);
-  }
+}
+
+dl {
+  font-weight: bold;
+}
+
+dd {
+  font-weight: normal;
+  font-style: italic;
+  margin-top: .5rem;
+  margin-left: -.5rem;
+}
+
+  /* Examples */
+
   .featured-text {
     font-style: italic;
   }
@@ -173,6 +184,8 @@
   .tertiary-text {
     font-size: var(--size-small);
   }
+
+  /* End Examples */
 
   figure {
     background-color: var(--color-accent2);
@@ -213,153 +226,172 @@
    Header Component
    ========================================================================== */
 
-  header {
-	  background-color: var(--color-primary);
-	  color: var(--color-text-light);
-	  padding: 2rem;
-  }
+header {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 2rem;
+  text-align: center;
+}
 
-  .site-header a {
-    color: var(--color-text-light);
-    font-weight: bold;
-    text-decoration: none;
-    padding-bottom: .5rem;
-  }
+header li a:hover {
+  border-bottom: 2px solid var(--color-text-light);
+  text-decoration: none;
+}
 
-  .site-header ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
+.logo {
+  color: var(--color-color-primary);
+  font-size: var(--size-xxxxxlarge);
+  font-weight: bold;
+  background-color: var(--color-text-light);
+  letter-spacing: .1rem;
+  padding: .5rem 1rem;
+  display: inline-block;
+  -webkit-text-stroke: .85px var(--color-primary);
+}
 
-  .site-header li {
-    display: inline;
-    margin-right: 2rem;
-  }
+.site-header ul {
+  list-style-type: none;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+}
 
-  .logo {
-    color: var(--color-text-light);
-    font-size: var(--size-xxxxlarge);
-    font-weight: bold;
-    background-color: var(--color-text-light);
-    letter-spacing: .1rem;
-    padding: .5rem 1rem;
-    display: inline-block;
-    -webkit-text-stroke: .85px var(--color-primary);
-  }
+.site-header li {
+  display: block;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.site-header li a {
+  color: var(--color-text-light);
+  font-weight: bold;
+  text-decoration: none;
+  padding-bottom: .25rem;
+}
+
+.current-page {
+  border-bottom: 2px solid var(--color-text-light);
+}
 
  /* ==========================================================================
    Footer Component
    ========================================================================== */
 
-  footer {
-	   background-color: var(--color-primary);
-	   color: var(--color-white);
-	   padding: 2rem;
-     text-align: center;
-     margin-top: 5rem;
-   }
-  footer a {
-    color: var(--color-text-light);
-  }
-  footer p {
-    color: var(--color-text-light);
-    max-width: 45rem;
-    margin: 1rem auto;
-  }
-  
-  .social-links a {
-    color: var(--color-text-light);
-    text-decoration: none;
-  }
-  
-  .social-links ul {
-    list-style-type: none;
-  }
+footer {
+   background-color: var(--color-primary);
+   color: var(--color-white);
+   padding: 2rem;
+   text-align: center;
+   margin-top: 5rem;
+ }
 
-  .social-links li {
-    display: inline;
-    margin-right: 2rem;
-  }
+footer a {
+  color: var(--color-text-light);
+}
 
- /* ==========================================================================
-   Buttons
-   ========================================================================== */
-  .button {
-    font-size: var(--size-large);
-    display: inline-block;
-    padding: .5rem;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-text-light);
-    background-color: var(--color-accent1);
-    box-shadow: .25rem .25rem var(--color-text-disabled);
-    border: none;
-    cursor: pointer;
-  }
+footer a:hover {
+  text-decoration: underline;
+}
 
-  .button:hover {
-    transition: .5s;
-    color: var(--color-accent1);
-    background-color: var(--color-text-light);
-  }
+footer p {
+  color: var(--color-text-light);
+  max-width: 45rem;
+  margin: 1rem auto;
+}
 
-  .button:active {
-    color: var(--color-text-light);
-    background-color: var(--color-accent2);
-    transform: translateX(1rem) translateY(1rem);
-  }
+.social-links a {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
 
-  .button:focus {
-    color: var(--color-textDark);
-  }
+.social-links ul {
+  list-style-type: none;
+}
 
-  .hero-button {
-    font-size: var(--size-xxxlarge);
-    padding: 1rem;
-    color: var(--color-text-light);
-    background-color: var(--color-primary);
-  }
+.social-links li {
+  display: inline;
+  margin-right: 2rem;
+}
 
-  .hero-button:hover {
-    transition: .5s;
-    color: var(--color-primary);
-    background-color: var(--color-text-light);
-  }
+/* ==========================================================================
+ Buttons
+ ========================================================================== */
 
-  .hero-button:active {
-    color: var(--color-text-light);
-    background-color: var(--color-accent2);
-    transform: translateX(1rem) translateY(1rem);
-  }
+.button {
+  font-size: var(--size-large);
+  display: inline-block;
+  padding: .5rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-text-light);
+  background-color: var(--color-accent1);
+  box-shadow: .25rem .25rem var(--color-text-disabled);
+  border: none;
+  cursor: pointer;
+}
 
-  .hero-button:focus {
-    color: var(--color-textDark);
-  }
+.button:hover {
+  transition: .5s;
+  color: var(--color-accent1);
+  background-color: var(--color-text-light);
+  text-decoration: none;
+}
 
-  .small-button {
-    font-size: var(--size-small);
-    padding: .25rem;
-    color: var(--color-primary);
-  }
+.button:active {
+  color: var(--color-text-light);
+  background-color: var(--color-accent2);
+  transform: translateX(1rem) translateY(1rem);
+}
 
-  .small-button:hover {
-    transition: .5s;
-    color: var(--color-accent1);
-    border: none;
-    background-color: var(--color-primary);
-  }
+.button:focus {
+  color: var(--color-textDark);
+}
 
-  .small-button:active {
-    color: var(--color-text-light);
-    background-color: var(--color-accent2);
-    border: none;
-  }
+.hero-button {
+  font-size: var(--size-xxxlarge);
+  padding: 1rem;
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+}
 
-  .small-button:focus {
-    color: var(--color-textDark);
-  }
+.hero-button:hover {
+  transition: .5s;
+  color: var(--color-primary);
+  background-color: var(--color-text-light);
+}
+
+.hero-button:active {
+  color: var(--color-text-light);
+  background-color: var(--color-accent2);
+  transform: translateX(1rem) translateY(1rem);
+}
+
+.hero-button:focus {
+  color: var(--color-textDark);
+}
+
+.small-button {
+  font-size: var(--size-small);
+  padding: .25rem;
+  color: var(--color-primary);
+}
+
+.small-button:hover {
+  transition: .5s;
+  color: var(--color-accent1);
+  border: none;
+  background-color: var(--color-primary);
+}
+
+.small-button:active {
+  color: var(--color-text-light);
+  background-color: var(--color-accent2);
+  border: none;
+}
+
+.small-button:focus {
+  color: var(--color-textDark);
+}
 
 /* ==========================================================================
   Accordian Component
@@ -459,6 +491,10 @@ dialog[open] {
    Form Inputs
   ========================================================================== */
 
+form {
+  display: block-flex;
+}
+
 label {
   font-weight: bold;
 }
@@ -551,8 +587,7 @@ select:focus {
 }
 
 input[type="submit"] {
-  display: inline;
-  float: right;
+  flex-wrap: column;
 }
 
 input::placeholder {
@@ -575,4 +610,401 @@ input[type="tel"] {
 input.error {
   background-color: lightcoral; 
   border-color: crimson;
+}
+
+/* ==========================================================================
+   Navigation
+  ========================================================================== */
+.nav-example {
+  font-weight: bold;
+}
+
+.nav-example > li {
+  list-style: none;
+  color: var(--color-light-text);
+}
+
+.nav-example a {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+.nav-example a:hover {
+  background-color: var(--color-accent1);
+  padding: 1rem;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-example ul li:before {
+  content: none;
+}
+
+/* Horizontal Menu */
+
+.primary-nav-example {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--color-primary);
+  padding: 2rem;
+}
+
+.primary-nav-example > li:nth-child(3):after {
+  content: '';
+  border: 4px solid transparent;
+  border-top: 4px solid white;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* Vertical Menu */
+
+.secondary-nav-example {
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding-left: 0;
+}
+
+.secondary-nav-example > li {
+  background-color: var(--color-primary);
+  padding: 1rem;
+}
+
+.secondary-nav-example ol {
+  padding-left: 0px;
+}
+
+.secondary-nav-example > li:nth-child(3):after {
+  content: '';
+  border: 4px solid transparent;
+  border-top: 4px solid white;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.dropdown-container {
+  position: relative;
+  color: var(--color-light-text);
+}
+
+.dropdown-container .dropdown-menu {
+  display: none;
+  list-style: none;
+  width: auto;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  text-decoration: none;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.dropdown-container:hover .dropdown-menu li {
+  padding: 1rem;
+}
+
+/* ==========================================================================
+   Notifications
+  ========================================================================== */
+
+  .notification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 2rem;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    box-shadow: .25rem .25rem var(--color-text-disabled);
+  }
+  
+  .notification.error {
+    background-color: lightcoral;
+  }
+
+  .notification.warning {
+    background-color: var(--color-accent1);
+    color: var(--color-text);
+  }
+
+   .notification.neutral {
+    background-color: var(--color-primary);
+  }
+
+   .notification.success {
+    background-color: green;
+  }
+
+  .notification .button {
+    background-color: var(--color-text-light);
+    color: var(--color-text);
+    margin-top: 1rem;
+  }
+
+  .svg-inline--fa {
+    width: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+/* ==========================================================================
+   Hero Block
+  ========================================================================== */
+
+  .hero-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .hero-block-main {
+    background-color: blue;
+    background-image: url("../images/tools.jpg");
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-block-main h2 {
+    margin: 0;
+    padding: 1rem;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+  }
+
+  .hero-block-side {
+    color: var(--color-text-light);
+    display: flex;
+    flex: 30%;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    padding: 1rem;
+  }
+
+  .hero-block-side h3 {
+    margin: 0;
+  }
+
+/* ==========================================================================
+   Cards
+  ========================================================================== */
+
+.card {
+  background-color: var(--color-text-light);
+  box-shadow: .25rem .25rem var(--color-text-disabled);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-container {
+  background-image: url("../images/carpentry-history.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+}
+
+.tag {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 1rem;
+
+}
+.side-container {
+  padding: 1rem;
+}
+
+.side-container a {
+  float: right;
+}
+
+.cta-container {
+  background-image: url("../images/workbench.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+  ========================================================================== */  
+@media (min-width: 320px) {
+
+
+}
+
+@media ( min-width: 768px ) {
+
+/* Place styles for screens smaller than 1200px but bigger than 768px */
+  html {
+    --ratio: 1.25;
+  }
+
+  .help-box a {
+    display: block;
+    color: white;
+    background-color: var(--color-accent1);
+    font-size: 1rem;
+    font-weight: bold;  
+    width: 5%;
+    padding: .5rem;
+    text-align: center;
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    box-shadow: .25rem .25rem var(--color-text-disabled);
+  }
+
+  header {
+    text-align: left;
+  }
+
+  .site-header ul {
+    list-style-type: none;
+    padding-left: 0rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .site-header li {
+    display: inline;
+    margin-right: 2rem;
+  }
+
+  .site-header li a {
+    padding-bottom: .5rem;
+  }
+
+  main {
+    text-align: left;
+    padding: .5rem;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: var(--color-primary);
+    font-size: var(--size-xxxxxlarge);
+    line-height: 4rem;
+    margin-top: 4rem;
+  }
+
+  h2 {
+    margin-top: 4rem;
+  }
+
+  h3 {
+    margin-top: 3rem;
+  }
+
+  main ul {
+    padding-left: 0rem;
+  }
+
+  dd {
+    margin-left: 1rem;
+  }
+  
+  .notification-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .notification {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .notification.error {
+    background-color: lightcoral;
+  }
+
+  .notification.warning {
+    background-color: var(--color-accent1);
+    color: var(--color-text);
+  }
+
+   .notification.neutral {
+    background-color: var(--color-primary);
+  }
+
+   .notification.success {
+    background-color: green;
+  }
+
+  .notification .button {
+    background-color: var(--color-text-light);
+    color: var(--color-text);
+    margin-top: 0;
+
+  }
+
+  .svg-inline--fa {
+    width: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .hero-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2rem;
+  }
+
+  .hero-block-main {
+    background-color: blue;
+    background-image: url("https://drcorriel.com/wp-content/uploads/2016/05/tools.jpg");
+    display: flex;
+    height: auto;
+    flex: 70%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-block-main h2 {
+    margin: 0;
+    padding: 1rem;
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+  }
+
+  .hero-block-side {
+    color: var(--color-text-light);
+    display: flex;
+    flex: 30%;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    padding: 1rem;
+  }
+
+  .hero-block-side h3 {
+    margin: 0;
+  }
+
+}
+
+@media ( min-width: 1200px ) {
+
+/* Place Styles for screens larger than 1200px */
+
 }
