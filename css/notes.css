@@ -1,0 +1,102 @@
+.button {
+  background-color: var(--color-accent1);
+  border: none;
+  box-shadow: .25rem .25rem var(--color-text-disabled);
+  color: var(--color-text-light);
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--size-large);
+  font-weight: bold;
+  padding: .5rem;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-accent1);
+  text-decoration: none;
+  transition: .5s;
+}
+
+.button:active {
+  background-color: var(--color-accent2);
+  color: var(--color-text-light);
+  transform: translateX(1rem) translateY(1rem);
+}
+
+.button:focus {
+  color: var(--color-textDark);
+}
+
+.hero-button {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  font-size: var(--size-xxxlarge);
+  padding: 1rem;
+}
+
+.hero-button:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-primary);
+  transition: .5s;
+}
+
+.hero-button:active {
+  background-color: var(--color-accent2);
+  color: var(--color-text-light);
+  transform: translateX(1rem) translateY(1rem);
+}
+
+.hero-button:focus {
+  color: var(--color-textDark);
+}
+
+.small-button {
+  color: var(--color-primary);
+  font-size: var(--size-small);
+  padding: .25rem;
+  margin: .25rem;
+}
+
+.small-button:hover {
+  background-color: var(--color-primary);
+  border: none;
+  color: var(--color-accent1);
+  transition: .5s;
+}
+
+.small-button:active {
+  background-color: var(--color-accent2);
+  border: none;
+  color: var(--color-text-light);
+}
+
+.small-button:focus {
+  color: var(--color-textDark);
+}
+
+.light-button {
+  background-color: var(--color-text-light);
+}
+
+.light-button:hover {
+  background-color: var(--color-accent1);
+  color: var(--color-text-light);
+}
+
+.dark-button {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.dark-button:hover {
+  background-color: var(--color-accent1);
+  color: var(--color-text-disabled);
+}
+
+.align-button {
+  margin-left: auto;
+}
+.orange-button {
+  background-color: var(--color-accent1);
+}
