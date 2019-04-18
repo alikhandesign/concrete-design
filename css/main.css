@@ -937,7 +937,7 @@ input.error {
   color: var(--color-text-light);
 }
 
-.callout b, p {
+.callout b {
   color: var(--color-text-light);
 }
 
@@ -950,6 +950,11 @@ input.error {
   display: inline-block;
   margin: auto;
   width: auto;
+}
+
+.callout-container p {
+  color: var(--color-text-light);
+  font-size: var(--size-large);
 }
 
 .featured-callout {
